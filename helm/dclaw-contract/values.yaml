@@ -1,0 +1,26 @@
+replicaCount: 1
+
+frontend:
+  image:
+    repository: dclaw-contract-frontend
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 3049
+  ingress:
+    enabled: false
+
+backend:
+  image:
+    repository: dclaw-contract-backend
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 8135
+  env:
+    CONTRACT_DATABASE_URL: "postgresql+asyncpg://postgres:postgres@postgres:5432/dclaw_contract"
+
+database:
+  name: dclaw_contract

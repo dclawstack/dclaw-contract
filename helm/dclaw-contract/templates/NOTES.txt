@@ -1,0 +1,4 @@
+DClaw Contract deployed!
+
+Frontend: http://dclaw-contract.local
+Backend API: http://dclaw-contract-backend:8135
